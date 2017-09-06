@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 /**
  * Created by momo on 2017-09-05.
  */
@@ -34,7 +36,6 @@ public class Board {
         }
     }
     public boolean checkEmpty(int autoInput1, int AutoInput2,Board board){
-
         if (autoInput1 == 1) {
             switch (AutoInput2) {
                 case 1:
@@ -66,5 +67,15 @@ public class Board {
             }
         }
         return true;
+    }
+    public boolean checkDraw(){
+        if(Arrays.asList(row1).contains("   ") ||
+           Arrays.asList(row2).contains("   ") ||
+           Arrays.asList(row3).contains("   ")){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

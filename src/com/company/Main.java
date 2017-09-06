@@ -30,7 +30,7 @@ public class Main {
         Board board = new Board();
         board.getBoard();
 
-        // create second player
+        // create second player & play game
         if(userInput == 1){
             person2 = new Person();
             playGameWithPerson(board,person1,person2);
@@ -38,22 +38,22 @@ public class Main {
             computer = new Computer();
             playGameWithComputer(board,person1,computer);
         }
-
-
-
-//        Message.printWelcome();
     } // FIN : main method
 
-/////////////////////////////////////////////////////////////////
+
 
 
 
     public static void playGameWithPerson(Board board,Player p1, Player p2){
         // play game
-        while(!board.someoneWon()) {
+        while(!board.someoneWon() || !board.checkDraw()) {
             Game.continueGame1(p1,board);
             Message.printCurrentStatus();
             board.getBoard();
+            if(board.checkDraw()) {
+                System.out.println("Draw");
+                break;
+            }
 
             if(board.someoneWon()){
                 System.out.println("player 1 won!" + "\n");
@@ -62,6 +62,10 @@ public class Main {
                 Game.continueGame2(p2,board);
                 Message.printCurrentStatus();
                 board.getBoard();
+                if(board.checkDraw()) {
+                    System.out.println("Draw");
+                    break;
+                }
 
                 if(board.someoneWon()){
                     System.out.println("player 2 won!" + "\n");
@@ -73,10 +77,14 @@ public class Main {
 
     public static void playGameWithComputer(Board board,Player p1, Player c1){
         // play game
-        while(!board.someoneWon()) {
+        while(!board.someoneWon() || !board.checkDraw()) {
             Game.continueGame1(p1,board);
             Message.printCurrentStatus();
             board.getBoard();
+            if(board.checkDraw()) {
+                System.out.println("Draw");
+                break;
+            }
 
             if(board.someoneWon()){
                 System.out.println("player 1 won!" + "\n");
@@ -85,6 +93,10 @@ public class Main {
                 Game.continueGame3(c1,board);
                 Message.printCurrentStatus();
                 board.getBoard();
+                if(board.checkDraw()) {
+                    System.out.println("Draw");
+                    break;
+                }
 
                 if(board.someoneWon()){
                     System.out.println("computer won!" + "\n");
