@@ -44,28 +44,28 @@ public class Main {
 
 
     public static void playGame(Board board,Player p1, Player p2, int player2Type){
-        while(!board.someoneWon() || !board.checkDraw()) {
+        while(!board.isWinner() || !board.isDraw()) {
             Game.continueGame1(p1,board);
             Message.printCurrentStatus();
             board.getBoard();
-            if(board.checkDraw()) {
+            if(board.isDraw()) {
                 System.out.println("Draw");
                 break;
             }
 
-            if(board.someoneWon()){
+            if(board.isWinner()){
                 System.out.println("player 1 won!" + "\n");
                 break;
             } else {
                 Game.continueGame2(p2, board, player2Type);
                 Message.printCurrentStatus();
                 board.getBoard();
-                if(board.checkDraw()) {
+                if(board.isDraw()) {
                     System.out.println("Draw");
                     break;
                 }
 
-                if(board.someoneWon()){
+                if(board.isWinner()){
                     System.out.println("player 2 won!" + "\n");
                     break;
                 }

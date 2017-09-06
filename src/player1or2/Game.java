@@ -1,6 +1,7 @@
 package player1or2;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by momo on 2017-09-05.
@@ -73,6 +74,7 @@ public class Game {
 
             if(player2Type == 2){
                 strUserInput = ((Player2)player).chooseAuto();
+                TimeUnit.SECONDS.sleep(2);
             } else {
                 strUserInput = strInput.nextLine();
             }
@@ -81,7 +83,7 @@ public class Game {
         } catch (Exception e) {}
 
         if(player2Type == 2){
-            while (!board.checkEmpty(split1,split2,board)){
+            while (!board.isEmpty(split1,split2,board)){
                 String strUserInput = ((Player2)player).chooseAuto();
                 split1 = Integer.valueOf(strUserInput.substring(0, 1));
                 split2 = Integer.valueOf(strUserInput.substring(2, 3));

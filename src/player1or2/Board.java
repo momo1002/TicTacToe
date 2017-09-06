@@ -24,7 +24,7 @@ public class Board {
         System.out.println(border);
     }
 
-    public boolean someoneWon(){
+    public boolean isWinner(){
         if ((row1[1].equals(row1[3]) && row1[3].equals(row1[5]) && !row1[5].contains("   ")) ||
             (row2[1].equals(row2[3]) && row2[3].equals(row2[5]) && !row2[5].contains("   ")) ||
             (row3[1].equals(row3[3]) && row3[3].equals(row3[5]) && !row3[5].contains("   ")) ||
@@ -35,7 +35,7 @@ public class Board {
             return false;
         }
     }
-    public boolean checkEmpty(int autoInput1, int AutoInput2,Board board){
+    public boolean isEmpty(int autoInput1, int AutoInput2, Board board){
         if (autoInput1 == 1) {
             switch (AutoInput2) {
                 case 1:
@@ -69,7 +69,7 @@ public class Board {
         return true;
     }
 
-    public boolean checkDraw(){
+    public boolean isDraw(){
         if(Arrays.asList(row1).contains("   ") ||
            Arrays.asList(row2).contains("   ") ||
            Arrays.asList(row3).contains("   ")){
