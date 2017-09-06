@@ -6,35 +6,39 @@ public class Main {
     public static void main(String[] args) {
         // create first player
         Player person1 = new Player1();
-
         Message.printWelcome();
-
         Scanner input = new Scanner(System.in);
         int userInput = input.nextInt();
 
-        // vs. person or computer
-        while(true) {
-            if (userInput == 1 || userInput == 2) {
-                Message.printChooseLevel(userInput);
-                break;
-            } else {
-                Message.printErrorChooseLevel();
-                userInput = input.nextInt();
+        while(userInput != 99){
+
+            // vs. person or computer
+            while(true) {
+                if (userInput == 1 || userInput == 2) {
+                    Message.printChooseLevel(userInput);
+                    break;
+                } else {
+                    Message.printErrorChooseLevel();
+                    userInput = input.nextInt();
+                }
             }
-        }
 
-        // create a bord
-        Message.printCurrentStatus();
-        Board board = new Board();
-        board.getBoard();
+            // create a bord
+            Message.printCurrentStatus();
+            Board board = new Board();
+            board.getBoard();
 
-        // create second player & play game
-        if(userInput == 1){
-            Player person2 = new Player2();
-            playGame(board,person1,person2,userInput);
-        } else {
-            Player computer = new Player2();
-            playGame(board,person1,computer,userInput);
+            // create second player & play game
+            if(userInput == 1){
+                Player person2 = new Player2();
+                playGame(board,person1,person2,userInput);
+            } else {
+                Player computer = new Player2();
+                playGame(board,person1,computer,userInput);
+            }
+            Message.printWelcome();
+            userInput = input.nextInt();
+
         }
     } // FIN : main method
 

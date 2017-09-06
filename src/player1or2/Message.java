@@ -11,7 +11,8 @@ public class Message {
         System.out.println("  Class Cornerstone WMDP");
         System.out.println("  Date:xx/xx/xx" + "\n");
         System.out.println("1 --- person vs. person");
-        System.out.println("2 --- person vs. random computer" + "\n");
+        System.out.println("2 --- person vs. random computer");
+        System.out.println("99 -- Exit" + "\n");
         System.out.println("Enter your choice(1 or 2):");
         System.out.println("==================================");
     }
