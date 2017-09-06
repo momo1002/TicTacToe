@@ -1,4 +1,4 @@
-package com.company;
+package player1or2;
 
 /**
  * Created by momo on 2017-09-05.
@@ -25,11 +25,11 @@ public class Message {
         System.out.println("The current status is:");
     }
     public static void printEncourageMoving(int playerNum){
-        if(playerNum == 3){
-            System.out.println("Player Computer: ");
+        if(playerNum == 2){
+            System.out.println("Player computer: ");
 
-        } else {
-            System.out.println("Player" + playerNum + ":make your move:");
+        } else if (playerNum == 0 || playerNum == 1) {
+            System.out.println("Player" + Integer.valueOf(playerNum+1) + ":make your move:");
 
         }
     }

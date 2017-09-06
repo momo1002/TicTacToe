@@ -1,13 +1,13 @@
-package com.company;
+package player1or2;
 
 import java.util.Random;
 
 /**
  * Created by momo on 2017-09-05.
  */
-public class Computer implements Player {
+public class Player2 implements Player {
     Random random = new Random();
-    private final String SymbolP2 = " X ";
+    private final String SymbolX = " X ";
 
     public String chooseAuto(){
         int firstNum = random.nextInt(3) +1;
@@ -16,12 +16,10 @@ public class Computer implements Player {
         return AutoNumber;
     }
 
-    @Override
-    public String getSymbolP1() {
+    public String getSymbolO() {
         return null;
     }
-    @Override
-    public String getSymbolP2() {
-        return SymbolP2;
+    public String getSymbolX() {
+        return SymbolX;
     }
 }

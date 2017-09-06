@@ -1,4 +1,4 @@
-package com.company;
+package player1or2;
 
 import java.util.Arrays;
 
@@ -68,13 +68,13 @@ public class Board {
         }
         return true;
     }
+
     public boolean checkDraw(){
         if(Arrays.asList(row1).contains("   ") ||
            Arrays.asList(row2).contains("   ") ||
            Arrays.asList(row3).contains("   ")){
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
